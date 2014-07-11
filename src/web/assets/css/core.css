@@ -39,7 +39,7 @@ input, select { vertical-align: middle; }
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 /* FONT PATH -------------------------- */
-@font-face { font-family: 'FontAwesome'; src: url("../../fonts/fontawesome-webfont.eot?v=4.0.3"); src: url("../../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular") format("svg"), url("../../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3") format("embedded-opentype"), url("../../fonts/fontawesome-webfont.woff?v=4.0.3") format("woff"), url("../../fonts/fontawesome-webfont.ttf?v=4.0.3") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'FontAwesome'; src: url("../../plugins/fontawesome/fonts/fontawesome-webfont.eot?v=4.0.3"); src: url("../../plugins/fontawesome/fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular") format("svg"), url("../../plugins/fontawesome/fonts/fontawesome-webfont.eot?#iefix&v=4.0.3") format("embedded-opentype"), url("../../plugins/fontawesome/fonts/fontawesome-webfont.woff?v=4.0.3") format("woff"), url("../../plugins/fontawesome/fonts/fontawesome-webfont.ttf?v=4.0.3") format("truetype"); font-weight: normal; font-style: normal; }
 .fa { display: inline-block; font-family: FontAwesome; font-style: normal; font-weight: normal; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 /* makes the font 33% larger relative to the icon container */
@@ -845,6 +845,8 @@ input, select { vertical-align: middle; }
 .fa-plus-square-o:before { content: "\f196"; }
 
 *, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+i { font-size: 20px; display: block; }
 
 html, body { font-family: "Roboto"; font-size: 14px; color: #333333; background-color: white; margin: 0; padding: 0; }
 

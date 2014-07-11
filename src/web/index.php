@@ -27,13 +27,14 @@ $indexData =
 
     'js'    => 
     [
-        $Core->Index->addFile('js', 'assets/js/jquery.js'),
+        $Core->Index->addFile('js', 'plugins/jquery/jquery.js'),
         $Core->Index->addFile('js', 'assets/js/core.js'),
     ],
 
     'css'   =>
     [
         $Core->Index->addFile('css', 'assets/css/core.css'),
+        $Core->Index->addFile('css', 'plugins/fontawesome/font-awesome.css'),
     ],
 
     'meta'  =>

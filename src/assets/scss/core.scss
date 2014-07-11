@@ -4,18 +4,23 @@ $htmlColor: #333;
 $htmlColorLight: #fff;
 $htmlFontFamily: 'Roboto';
 $htmlFontSize: 14px;
-$fontAwesomeRoot: '../../fonts';
 
 // Import what we need
 @import 'helpers/_breakpoints.scss';
 @import 'helpers/_classes.scss';
 @import 'helpers/_reset.scss';
 @import 'helpers/_googleColors.scss';
-@import 'helpers/_fontawesome.scss';
+
+// Font awesome
+$fontAwesomeRoot: '../../plugins/fontawesome/fonts';
+
+// Cool plugin stuff
+@import '../../web/plugins/fontawesome/font-awesome.scss';
 
 // -------------------------------------
 // Padding, stop it.
 *, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+i { font-size: 20px; display: block; }
 // -------------------------------------
 // Base tags
 $headerTop: 80px;
