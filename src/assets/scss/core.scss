@@ -1,0 +1,167 @@
+// General variables
+$htmlBackgroundColor: #fff;
+$htmlColor: #333;
+$htmlColorLight: #fff;
+$htmlFontFamily: 'Roboto';
+$htmlFontSize: 14px;
+$fontAwesomeRoot: '../../fonts';
+
+// Import what we need
+@import 'helpers/_breakpoints.scss';
+@import 'helpers/_classes.scss';
+@import 'helpers/_reset.scss';
+@import 'helpers/_googleColors.scss';
+@import 'helpers/_fontawesome.scss';
+
+// -------------------------------------
+// Padding, stop it.
+*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+// -------------------------------------
+// Base tags
+$headerTop: 80px;
+$footerTop: 30px;
+$sectionWidth: 320px;
+$asideWidth: 180px;
+$contentLeftPadding: 50px;
+
+html, body
+{
+    font-family: $htmlFontFamily;
+    font-size: $htmlFontSize;
+    color: $htmlColor;
+    background-color: $htmlBackgroundColor;
+    margin: 0;
+    padding: 0;
+
+}
+header, nav, main, aside, section, footer 
+{
+    position: absolute;
+    left: 0; right: 0;
+}
+header
+{
+    background-color: $htmlBackgroundColor;
+    height: $headerTop;
+    top: 0;
+    z-index: 2;
+
+    border-bottom:solid 1px #ccc;
+    box-shadow: 0 2px 0 #eee;
+    padding: 20px 0 0 $contentLeftPadding;
+}
+nav
+{
+    top: $headerTop;
+    z-index: 3;
+    margin: 0 0 0 $contentLeftPadding;
+
+    .box 
+    {
+        float: left;
+        margin: 0 30px 0 0;
+    }
+
+    span
+    {
+        @include transition(.2s);
+
+        padding: 10px 14px;
+        display: inline-block;
+        margin: 0 -4px 0 0;
+        font-weight: 500;
+        font-size: 15px;
+
+        border:solid 1px #ccc;
+        box-shadow: 0 2px 0 #eee;
+        border-top:none;
+
+        &:hover
+        {
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+            color: $googleBlue500;
+            box-shadow: 0 2px 0 $googleBlue500;
+            border:solid 1px $googleBlue500;
+            border-top:none;
+
+            &.green
+            {
+                color: $googleGreen500;
+                box-shadow: 0 2px 0 $googleGreen500;
+                border:solid 1px $googleGreen500;
+                border-top:none;
+            }
+        }
+
+        &:first-child
+        {
+            border-bottom-left-radius: 3px;
+        }
+
+        &:last-child
+        {
+            border-bottom-right-radius: 3px;
+        }
+    }
+}
+main
+{
+    top: $headerTop; bottom: $footerTop; left: 0; right: $sectionWidth;
+    z-index: 1;
+}
+aside, section
+{
+    color: $htmlColorLight;
+}
+aside
+{
+    top: $headerTop; right: $sectionWidth; left: auto;
+    width: $asideWidth;
+    background-color: #333;
+    z-index: 3;
+    margin: -1px 0; // prevents "blurry" effect when borders are on other elements
+    border-bottom-left-radius: 3px;
+}
+section
+{
+    top: $headerTop; right: 0; bottom: $footerTop; left: auto;
+    width: $sectionWidth;
+    background-color: #333;
+    z-index: 3;
+    margin: -1px 0; // prevents "blurry" effect when borders are on other elements
+}
+footer
+{
+    bottom: 0;
+    z-index: 2;
+    border-top:solid 1px #aaa;
+    font-size: 11px;
+    padding: 8px 0 0 $contentLeftPadding;
+    height: $footerTop;
+}
+h1
+{
+    font-size: 18px;
+    margin-bottom:10px;
+}
+h2
+{
+    font-weight: 300;
+    font-size: 13px;
+}
+
+// -------------------------------------
+// Custom tags
+a
+{
+    color: $googleBlue500;
+}
+a, .ajax
+{
+    &:hover
+    {
+        color: $googleBlue500;
+    }
+}

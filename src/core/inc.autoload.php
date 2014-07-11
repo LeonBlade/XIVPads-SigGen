@@ -1,4 +1,4 @@
-autoload<?
+<?php
 
 /*  Autoload
  *  - This is XIVPads autoloader, if you load in a library that has its own auto loader
@@ -70,4 +70,3 @@ class AutoLoad
     }
 }
 (new AutoLoad());
-?>
