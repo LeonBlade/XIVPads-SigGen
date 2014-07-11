@@ -14,7 +14,7 @@ $Core->Index->addTemplate([
 $siteData =
 [
     'title'     => 'XIVSigs - Final Fantasy XIV Signature Generator',
-    'author'    => 'XIVPads Community + Josh Freeman @viion',
+    'author'    => 'XIVPads Community - Josh Freeman @viion',
     'copyright' => 'XIVSigs &copy; 2014 - all rights reserved - <a href="https://github.com/viion/XIVPads-SigGen">GitHub: XIVPads-SigGen</a>',
 ];
 
@@ -27,14 +27,13 @@ $indexData =
 
     'js'    => 
     [
-        $Core->Index->addFile('js', 'plugins/jquery/jquery.js'),
+        $Core->Index->addFile('js', 'plugins/jqueryui/jqueryui.js'),
         $Core->Index->addFile('js', 'assets/js/core.js'),
     ],
 
     'css'   =>
     [
         $Core->Index->addFile('css', 'assets/css/core.css'),
-        $Core->Index->addFile('css', 'plugins/fontawesome/font-awesome.css'),
     ],
 
     'meta'  =>
@@ -51,5 +50,3 @@ $finalHtml = $Core->Index->Render(null, $siteData, $finalHtml);
 
 // echo!
 echo $finalHtml;
-
-//$Log->show();

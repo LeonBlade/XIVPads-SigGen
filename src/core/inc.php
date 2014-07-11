@@ -11,16 +11,18 @@ require_once __DIR__ .'/helpers/functions.php';
  */
 require_once __DIR__ .'/../config/config.php';
 
-/*  Config classses
- *  - Defines for constants and defined settings, global usage
- *  - Auto load for classes and such
- *  - Live DB credentials (will include local if file exists)
- *  - Config class, initializes some global variables.
+/*  - Include a all the core files
+ *  defines ...
+ *  autoload ...
+ *  shutdown ...
+ *  class ...
+ *  routes ...
  */
 require_once __DIR__ .'/inc.defines.php';
 require_once __DIR__ .'/inc.autoload.php';
 require_once __DIR__ .'/inc.shutdown.php';
 require_once __DIR__ .'/inc.class.php';
+require_once __DIR__ .'/inc.routes.php';
 
 /*  Global "Log" class
  */
@@ -35,3 +37,8 @@ $Log = new Log();
  *  functionality to core methods.
  */
 $Core = new Core();
+
+/*  $_PARAMS
+ *  merged version of $_POST and $_GET
+ */
+$_PARAMS = array_merge($_POST, $_GET);

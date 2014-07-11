@@ -11,11 +11,9 @@ $htmlFontSize: 14px;
 @import 'helpers/_reset.scss';
 @import 'helpers/_googleColors.scss';
 
-// Font awesome
-$fontAwesomeRoot: '../../plugins/fontawesome/fonts';
+// Plugins
+@import '../../web/plugins/jqueryui/jqueryui.scss';
 
-// Cool plugin stuff
-@import '../../web/plugins/fontawesome/font-awesome.scss';
 
 // -------------------------------------
 // Padding, stop it.
@@ -23,11 +21,12 @@ $fontAwesomeRoot: '../../plugins/fontawesome/fonts';
 i { font-size: 20px; display: block; }
 // -------------------------------------
 // Base tags
-$headerTop: 80px;
+$headerTop: 90px;
+$navtop: 145px;
 $footerTop: 30px;
-$sectionWidth: 320px;
-$asideWidth: 180px;
-$contentLeftPadding: 50px;
+$sectionWidth: 280px;
+$asideWidth: 280px;
+$contentLeftPadding: 279px;
 
 html, body
 {
@@ -50,110 +49,134 @@ header
     height: $headerTop;
     top: 0;
     z-index: 2;
-
-    border-bottom:solid 1px #ccc;
-    box-shadow: 0 2px 0 #eee;
     padding: 20px 0 0 $contentLeftPadding;
 }
 nav
 {
     top: $headerTop;
     z-index: 3;
-    margin: 0 0 0 $contentLeftPadding;
+    padding: 0 0 0 $contentLeftPadding;
+
+    border-bottom:solid 1px #ccc;
+    box-shadow: 0 2px 0 #eee;
 
     .box 
     {
         float: left;
         margin: 0 30px 0 0;
-    }
 
-    span
-    {
-        @include transition(.2s);
-
-        padding: 10px 14px;
-        display: inline-block;
-        margin: 0 -4px 0 0;
-        font-weight: 500;
-        font-size: 15px;
-
-        border:solid 1px #ccc;
-        box-shadow: 0 2px 0 #eee;
-        border-top:none;
-
-        &:hover
+        h3
         {
-            position: relative;
-            z-index: 1;
-            cursor: pointer;
-            color: $googleBlue500;
-            box-shadow: 0 2px 0 $googleBlue500;
-            border:solid 1px $googleBlue500;
-            border-top:none;
+            font-weight: normal;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 5px 0;
+            color: #aaa;
+        }
+
+        span, a
+        {
+            @include transition(.2s);
+
+            padding: 10px 14px;
+            display: inline-block;
+            margin: 0 -4px -1px 0;
+            font-weight: 500;
+            font-size: 15px;
+
+            border:solid 1px #ccc;
+            box-shadow: 0 2px 0 #eee;
 
             &.green
             {
                 color: $googleGreen500;
-                box-shadow: 0 2px 0 $googleGreen500;
-                border:solid 1px $googleGreen500;
-                border-top:none;
             }
-        }
 
-        &:first-child
-        {
-            border-bottom-left-radius: 3px;
-        }
+            &.orange
+            {
+                color: $googleOrange500;
+            }
+ 
+            &.gray
+            {
+                color: $googleGray600;
+            }
 
-        &:last-child
-        {
-            border-bottom-right-radius: 3px;
+            &:hover
+            {
+                position: relative;
+                z-index: 1;
+                cursor: pointer;
+                color: $googleBlue500;
+                box-shadow: 0 2px 0 $googleBlue500;
+                border:solid 1px $googleBlue500;
+
+                &.green
+                {
+                    color: $googleGreen500;
+                    box-shadow: 0 2px 0 $googleGreen500;
+                    border:solid 1px $googleGreen500;
+                }
+
+                &.orange
+                {
+                    color: $googleOrange500;
+                    box-shadow: 0 2px 0 $googleOrange500;
+                    border:solid 1px $googleOrange500;
+                }
+            }
         }
     }
 }
 main
 {
-    top: $headerTop; bottom: $footerTop; left: 0; right: $sectionWidth;
+    top: $navtop; bottom: $footerTop; left: $asideWidth; right: $sectionWidth;
     z-index: 1;
 }
 aside, section
 {
-    color: $htmlColorLight;
+    z-index: 1;
+    //color: $htmlColorLight;
+    margin: -2px 0 -1px 0;
+    padding: 25px;
 }
 aside
 {
-    top: $headerTop; right: $sectionWidth; left: auto;
+    top: $navtop; right: 0; bottom: $footerTop; left: auto;
     width: $asideWidth;
-    background-color: #333;
-    z-index: 3;
-    margin: -1px 0; // prevents "blurry" effect when borders are on other elements
-    border-bottom-left-radius: 3px;
 }
 section
 {
-    top: $headerTop; right: 0; bottom: $footerTop; left: auto;
+    top: $navtop; left: 0; bottom: $footerTop;
     width: $sectionWidth;
-    background-color: #333;
-    z-index: 3;
-    margin: -1px 0; // prevents "blurry" effect when borders are on other elements
 }
 footer
 {
     bottom: 0;
     z-index: 2;
+    background-color: #eee;
     border-top:solid 1px #aaa;
+    box-shadow: 0 0 2px #ccc;
     font-size: 11px;
-    padding: 8px 0 0 $contentLeftPadding;
+    padding: 8px 0 0 10px;
     height: $footerTop;
 }
 h1
 {
     font-size: 18px;
     margin-bottom:10px;
+
+    i
+    {
+        color: #888;
+        margin: 0 10px 0 0;
+    }
 }
 h2
 {
-    font-weight: 300;
+    color: #888;
+    font-weight: 400;
     font-size: 13px;
 }
 
@@ -169,4 +192,19 @@ a, .ajax
     {
         color: $googleBlue500;
     }
+}
+
+// -------------------------------------
+// Jquery Tooltips
+.ui-tooltip 
+{
+    background: #111;
+    font-size: 12px;
+    padding: 8px 12px;
+    border-radius: 2px;
+    color: #fff;
+    min-width: 80px;
+    text-align: center;
+    border:none;
+    box-shadow: none;
 }

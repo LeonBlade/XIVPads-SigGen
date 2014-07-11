@@ -9,8 +9,11 @@
     <meta name="viewport" content="width=device-width, maximum-scale=1">
     <title>{{ title }}</title>
 
-    <!-- Roboto font -->
+    <!-- CDN -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900,500italic,500,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.js"></script>
 
     <!-- Dynamic -->
     {{ meta }}
@@ -20,30 +23,37 @@
     </head>
     <body>
 
-        <header><h1><i class="fa fa-bomb"></i>{{ title }}</h1><h2>{{ author }}</h2></header>
+        <header><h1><i class="fa fa-cube"></i>{{ title }}</h1><h2>{{ author }}</h2></header>
         <nav>
+            
             <div class="box">
-                <span class="ajax">Latest</span>
-                <span class="ajax">About</span>
+                <h3>Signatures</h3>
+                <span class="ajax" data-page="signatures/view/all">View All</span>
+                <span class="ajax" data-page="signatures/view/highest">Highest Used</span>
+                <span class="ajax" data-page="signatures/view/liked">Most Liked</span>
             </div>
             <div class="box">
-                <span class="ajax green">Create</span>
-                <span class="ajax">Load</span>
+                <h3>Templating</h3>
+                <span class="ajax green" data-page="generate/create">Create</span>
+                <span class="ajax green" data-page="generate/load">Load</span>
+                <span class="ajax green" data-page="generate/profile">Profile</span>
+                <span class="ajax green" data-page="generate/account">Account</span>
+            </div>
+            <div class="box">
+                <h3>Menu</h3>
+                <span class="ajax orange" data-page="site/latest">Latest</span>
+                <span class="ajax orange" data-page="site/about">About</span>
+            </div>
+            <div class="box">
+                <h3>Community</h3>
+                <a class="gray" target="_blank" href="http://xivpads.com">XIVPads</a>
+                <a class="gray" target="_blank" href="http://xivdb.com">XIVDB</a>
+                <a class="gray" target="_blank" href="http://xivsync.com">XIVSync</a>
             </div>
         </nav>
-        <main>Main</main>
-        <aside>
-            <div class="box">
-                <span><i class="fa fa-cubes"></i> fa-cubes</span>
-            </div>
-            <div class="box">
-                <span>other</span>
-            </div>
-            <div class="box">
-                <span>stuff</span>
-            </div>
-        </aside>
-        <section>Section</section>
+        <main></main>
+        <aside></aside>
+        <section></section>
         <footer>{{ copyright }}</footer>
 
     </body>
