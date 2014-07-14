@@ -1,6 +1,6 @@
 <?php
 // Include the main file that does all the magic
-include "../core/inc.php";
+include "../core/inc/inc.php";
 
 // Templates for index
 $Core->Index->addTemplate([

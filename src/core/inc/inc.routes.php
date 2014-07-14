@@ -8,7 +8,7 @@
 
 $ajaxPageRoutes =
 [
-    'signatures'    => 'modules/signatures/app.php',
-    'generate'      => 'modules/generate/app.php',
-    'site'          => 'modules/site/app.php',
+    'signatures'    => 'Modules\Signatures\App',
+    'generate'      => 'Modules\Generate\App',
+    'site'          => 'Modules\Site\App',
 ];

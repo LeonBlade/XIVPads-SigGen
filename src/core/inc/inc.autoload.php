@@ -26,7 +26,7 @@ class AutoLoad
             $path = $path .'.php';
 
             // Get the exact path which starts at root
-            $path = __DIR__ .'/'. $path;    
+            $path = __DIR__ .'/../'. $path;    
 
             // Include file
             include_once $path;

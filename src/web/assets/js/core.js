@@ -2,7 +2,13 @@ $(function()
 {
     console.log('ready!');
     Site.events.init();
+    Site.paging.default();
+
+    dev();
 });
+
+// Random global vars
+var DEFAULT_PAGE = 'generate/create';
 
 /*  Site
  */
@@ -46,6 +52,16 @@ var Site =
 
     paging:
     {
+        default: function()
+        {
+            ajax.go({
+                data: { i: DEFAULT_PAGE, },
+
+                success: Site.paging.success,
+                error: Site.paging.error,
+            });
+        },
+
         goto: function(element)
         {
             // pass onto paging

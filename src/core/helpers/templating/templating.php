@@ -1,6 +1,54 @@
 <?php
-
 namespace Helpers\Templating;
+
+/*  - Templating (interface)
+ *  Used in a documentation fashion
+ */
+interface InterfaceTemplating
+{
+    /*  - addTemplate
+     *  @param $array - An array of templates with associated key
+     *  @return - will only return false if $array is not an array.
+     */
+    public function addTemplate($array);
+
+    /*  - render
+     *  @param $key - Render a template based on the key given 
+     *  @param $params - (optional) the params to replace
+     *  @param $html - (optional) existing html, doesnt fetch from file.
+     *  @return - the formatted html, otherwise false.
+     */
+    public function render($key, $params = null, $html = null);
+
+    /*  - display
+     *  @param $key - Render a template based on the key given 
+     *  @param $params - (optional) the params to replace
+     *  @return - false if any failures
+     *
+     *  This will directly echo the template.
+     */
+    public function display($key, $params = null, $html = null);
+
+    /*  - get
+     *  @param $key - Get a template file 
+     *  @return - the html of the template
+     */
+    public function get($key);
+
+    /*  - appendTemplate
+     *  @param $html - the html to append onto
+     *  @param $var - the variable on the html to replace
+     *  @param $array - an array of html to inject
+     *  @return - the formatted and replaced html
+     */
+    public function appendTemplate($html, $var, $array);
+
+    /*  - replaceVars
+     *  @param $html - the html to format
+     *  @param $params - the params to replace.
+     */
+    public function setVars($html, $params);
+}
 
 /*  - Templating
  *  This is a small class that handles very basic
@@ -196,7 +244,4 @@ class Templating
         $vars = $this->getVariableParams($params);
         return str_ireplace($vars[0], $vars[1], $html);
     }
-
-
-
 }

@@ -5,11 +5,11 @@ $rootPath = __DIR__ .'/';
 
 /*  General functions
  */
-require_once __DIR__ .'/helpers/functions.php';
+require_once __DIR__ .'/../helpers/functions.php';
 
 /*  Config
  */
-require_once __DIR__ .'/../config/config.php';
+require_once __DIR__ .'/../../config/config.php';
 
 /*  - Include a all the core files
  *  defines ...

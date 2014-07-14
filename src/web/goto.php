@@ -1,6 +1,6 @@
 <?php
 // Include the main file that does all the magic
-include "../core/inc.php";
+include "../core/inc/inc.php";
 
 // Get i var
 $maxParam = 64;
@@ -18,8 +18,11 @@ if ($i)
         // Get app file
         $app = $ajaxPageRoutes[$app];
 
+        // append extra var
+        $_PARAMS['_vars'] = explode('/', $_PARAMS['i']);
+
         // Include it
-        include __DIR__.'/../core/'.$app;
+        new $app($_PARAMS);
     }
     else
     {
