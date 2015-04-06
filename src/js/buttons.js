@@ -1,18 +1,3 @@
-var xiv =
-{
-    init: function()
-    {
-        xiv.buttons.init();
-    },
-
-    buttons: {},
-    general: {},
-    editor: {},
-}
-xiv.general =
-{
-
-}
 xiv.buttons =
 {
     init: function()
@@ -26,8 +11,4 @@ xiv.buttons =
             $(this).addClass('active');
         });
     }
-}
-xiv.editor =
-{
-
 }

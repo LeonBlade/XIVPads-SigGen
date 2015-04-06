@@ -1,0 +1,55 @@
+// --------------------------------------------------
+// These are loops to create "grid" quick classes
+// --------------------------------------------------
+
+@for $i from 1 through 50 { .p#{$i} { padding: $i+0px !important; } }
+@for $i from 1 through 50 { .m#{$i} { margin: $i+0px !important; } }
+
+@for $i from 2 through 50 { .mb#{$i} { margin-bottom: $i+0px !important; }}
+@for $i from 2 through 50 { .mt#{$i} { margin-top: $i+0px !important; }}
+@for $i from 2 through 50 { .mr#{$i} { margin-right: $i+0px !important; }}
+@for $i from 2 through 50 { .ml#{$i} { margin-left: $i+0px !important; }}
+
+@for $i from 2 through 50 { .pb#{$i} { padding-bottom: $i+0px !important; }}
+@for $i from 2 through 50 { .pt#{$i} { padding-top: $i+0px !important; }}
+@for $i from 2 through 50 { .pr#{$i} { padding-right: $i+0px !important; }}
+@for $i from 2 through 50 { .pl#{$i} { padding-left: $i+0px !important; }}
+
+@for $i from 1 through 50 { .fs#{$i} { font-size: $i+0px !important; } }
+@for $i from 1 through 100 { .w#{$i} { width: $i+0% !important; } }
+@for $i from 1 through 300 { .h#{$i} { height: $i+0px !important; } }
+
+@for $i from 1 through 100 { .box#{$i} { float: left; width: $i+0%; } }
+@for $i from 1 through 50 { .gap#{$i} { height: $i+0px; display: block; } }
+
+.line { height: 2px; background-color: #eee; display: block; }
+.nopad { padding: 0 !important; margin: 0 !important; }
+.nomar { margin: 0 !important; }
+.circle { border-radius: 50%; }
+.split { width: 1px; background-color: #666; display: inline-block; }
+
+.tal { text-align: left; }
+.tar { text-align: right; }
+.tac { text-align: center; }
+
+.fl { float: left !important; }
+.fr { float: right !important; }
+
+.i, .italic { font-style: italic; }
+.b, .bold { font-weight: bold; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.zero { left: 0; top: 0; }
+.faint { opacity: 0.6; &:hover { opacity: 1; } }
+.fainter { opacity: 0.3; &:hover { opacity: 1; }  }
+.upper { text-transform: uppercase; }
+.pointer { cursor: pointer; }
+.hide { display: none; }
+.inline { display: inline-block; }
+
+.red { color: $red; }
+.blue { color: $blue; }
+.green { color: $green; }
+.yellow { color: $yellow; }
+.orange { color: $orange; }
+.purple { color: $purple; }

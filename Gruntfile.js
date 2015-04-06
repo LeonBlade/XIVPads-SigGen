@@ -87,7 +87,13 @@ module.exports = function(grunt) {
         concat: {
             basic_and_extras: {
                 files: {
-                    'web/js/main.js': ['src/js/main.js'],
+                    'web/js/main.js':
+                    [
+                        'src/js/main.js',
+                        'src/js/general.js',
+                        'src/js/buttons.js',
+                        'src/js/editor.js',
+                    ],
                 }
             }
         },
@@ -112,13 +118,15 @@ module.exports = function(grunt) {
             scss: {
                 files: [
                     'src/scss/*.scss',
+                    'src/scss/helpers/*.scss',
+                    'src/scss/styles/*.scss',
                 ],
                 tasks: ['compilesass','prefixcss', 'minifycss']
             },
 
             js: {
                 files: [
-                    'src/js/main.js',
+                    'src/js/*.js',
                 ],
                 tasks: ['lintjs','combine']
             },

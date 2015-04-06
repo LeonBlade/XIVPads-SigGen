@@ -20,11 +20,17 @@
     <link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
-    welcome!
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <div class="site">
+    <?php
+        require __DIR__ .'/../src/templates/header.html';
+        require __DIR__ .'/../src/templates/main.html';
+        require __DIR__ .'/../src/templates/footer.html';
+    ?>
+    </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
     <script src="js/main.js"></script>
+    <script>$(function() { xiv.init(); });</script>
 </body>
 </html>

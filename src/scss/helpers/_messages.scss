@@ -1,0 +1,21 @@
+.success,
+.error,
+.warning,
+.info
+{
+    padding: 10px 15px;
+    border-radius: 3px;
+}
+
+.success,
+.error,
+.warning
+{
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    color: #fff;
+}
+
+.success { @include vertical-gradient($green, 0%, darken($green, 10%), 100%); }
+.error { @include vertical-gradient($red, 0%, darken($red, 10%), 100%); }
+.warning { @include vertical-gradient($orange, 0%, darken($orange, 10%), 100%); }
+.info { @include vertical-gradient($gray, 0%, darken($gray, 10%), 100%); }

@@ -1,0 +1,35 @@
+table
+{
+    th, td
+    {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    th
+    {
+        text-align: left;
+        background-color: #eee;
+        border-bottom: solid 2px $blue;
+
+        &:hover.shortable
+        {
+            cursor: pointer;
+            background-color: $blue;
+            color: #fff;
+        }
+    }
+
+    tr
+    {
+        td
+        {
+            font-size: 14px;
+        }
+
+        &:nth-of-type(even)
+        {
+            background-color: #eee;
+        }
+    }
+}

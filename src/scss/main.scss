@@ -1,0 +1,25 @@
+$font: 14px 'Roboto', 'Open Sans', sans-serif;
+
+// based on: http://www.google.co.uk/design/spec/style/color.html#color-color-palette
+$red: #F44336;
+$blue: #2196F3;
+$green: #4CAF50;
+$yellow: #FFEB3B;
+$orange: #FF9800;
+$purple: #9C27B0;
+$gray: #eee;
+
+// imports
+@import 'helpers/_reset.scss';
+@import 'helpers/_classes.scss';
+@import 'helpers/_helpers.scss';
+@import 'helpers/_layout.scss';
+@import 'helpers/_forms.scss';
+@import 'helpers/_messages.scss';
+@import 'helpers/_table.scss';
+@import 'helpers/_table.scss';
+
+// styles
+@import 'styles/theme.scss';
+@import 'styles/headfoot.scss';
+@import 'styles/site.scss';
