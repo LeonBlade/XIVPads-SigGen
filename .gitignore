@@ -1,1 +1,2 @@
-src/config
+config/config.php
+node_modules
