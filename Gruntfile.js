@@ -1,9 +1,4 @@
-/*global module:false*/
 module.exports = function(grunt) {
-
-/*----------------------------------------------------
-*      Project config
-*----------------------------------------------------*/
     grunt.initConfig({
         /*----------------------------------------------------
         *      Metadata
@@ -20,17 +15,13 @@ module.exports = function(grunt) {
                 ' */',
 
         /*----------------------------------------------------
-        *      Styles
-        *----------------------------------------------------*/
-
-        /*----------------------------------------------------
         *      SASS compiler
         *----------------------------------------------------*/
 
         sass: {
             dist: {
                 files: {
-                    'web/css/styles.css': 'src/scss/style.scss'
+                    'web/css/main.css': 'src/scss/main.scss'
                 }
             }
         },
@@ -55,7 +46,7 @@ module.exports = function(grunt) {
 
         autoprefixer: {
             files: {
-                'web/css/styles.css': ['web/css/styles.css'],
+                'web/css/main.css': ['web/css/main.css'],
             }
         },
 
@@ -69,14 +60,9 @@ module.exports = function(grunt) {
             },
 
             files: {
-                'web/css/styles.css': ['web/css/styles.css'],
+                'web/css/main.css': ['web/css/main.css'],
             }
         },
-
-
-        /*----------------------------------------------------
-        *      Javascripts
-        *----------------------------------------------------*/
 
         /*----------------------------------------------------
         *      JSHint
@@ -118,90 +104,6 @@ module.exports = function(grunt) {
             }
         },
 
-
-        /*----------------------------------------------------
-        *      HTML stuff
-        *----------------------------------------------------*/
-
-        /*----------------------------------------------------
-        *      HTML5 lint
-        *----------------------------------------------------*/
-
-        lint5: {
-            dirPath: "src/",
-            defaults: {
-                //"email": "a@a.com",
-                //"username": "abcd"
-            },
-            templates: [
-                "index.html"
-            ],
-            ignoreList: [
-                "Bad value â€œX-UA-Compatibleâ€ for attribute â€œhttp-equivâ€ on element â€œmetaâ€.",
-                //"another message"
-                //"Bad value â€œâ€ for attribute â€œactionâ€ on element â€œformâ€: Must be non-empty.",
-                //"Attribute â€œ[a-z1-9]+â€ not allowed on element â€œ[a-z1-9]+â€ at this point",
-                //"You can just copy these straight from the error log"
-            ]
-        },
-
-        /*----------------------------------------------------
-        *      Minify HTML
-        *----------------------------------------------------*/
-
-        htmlmin: {
-            dist: {
-                options: {
-                    removeComments: true,
-                    collapseWhitespace: true,
-                    collapseBooleanAttributes: true,
-                    removeRedundantAttributes: true
-                },
-
-                files: {
-                    'dist/index.html': 'src/index.html'
-                }
-            }
-        },
-
-
-        /*----------------------------------------------------
-        *      Files, watching & FTP
-        *----------------------------------------------------*/
-
-        /*----------------------------------------------------
-        *      Copy required files
-        *----------------------------------------------------*/
-
-        copy: {
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: 'src/',
-                    src: ['img/**/*', 'font/*', 'js/lib/htc/*', 'css/*', '*.html'],
-                    dest: 'dist/'
-                }]
-            }
-        },
-
-        /*----------------------------------------------------
-        *      push changed files to FTP location
-        *----------------------------------------------------*/
-
-        ftpush: {
-            build: {
-                auth: {
-                    host: '',
-                    port: 21,
-                    authKey: 'key1'
-                },
-
-                src: 'dist/',
-                dest: '',
-                exclusions: ['.DS_Store']
-            }
-        },
-
         /*----------------------------------------------------
         *      Watch task.
         *----------------------------------------------------*/
@@ -238,11 +140,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    grunt.loadNpmTasks('grunt-lint5');
-    grunt.loadNpmTasks('grunt-contrib-htmlmin');
-
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-ftpush');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     /*----------------------------------------------------
@@ -258,13 +155,7 @@ module.exports = function(grunt) {
     grunt.registerTask('combine', ['concat']);
     grunt.registerTask('uglifyjs', ['uglify']);
 
-    grunt.registerTask('linthtml', ['lint5']);
-    grunt.registerTask('minifyhtml', ['htmlmin']);
-
-    grunt.registerTask('files', ['copy']);
-    grunt.registerTask('upload', ['ftpush']);
     grunt.registerTask('monitor', ['watch']);
-
 
     grunt.registerTask('default', ['compilesass','prefixcss','minifycss','lintjs','combine','monitor']);
     grunt.registerTask('dist', ['compilesass','prefixcss','minifycss','lintjs','combine']);
