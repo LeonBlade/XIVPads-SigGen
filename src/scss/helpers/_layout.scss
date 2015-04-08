@@ -16,6 +16,7 @@
 @for $i from 2 through 50 { .pl#{$i} { padding-left: $i+0px !important; }}
 
 @for $i from 1 through 50 { .fs#{$i} { font-size: $i+0px !important; } }
+@for $i from 1 through 50 { .lh#{$i} { line-height: $i+0px !important; } }
 @for $i from 1 through 100 { .w#{$i} { width: $i+0% !important; } }
 @for $i from 1 through 300 { .h#{$i} { height: $i+0px !important; } }
 
@@ -34,6 +35,7 @@
 
 .fl { float: left !important; }
 .fr { float: right !important; }
+.fh { height: 100%; position: relative; bottom: 0; top: 0; }
 
 .i, .italic { font-style: italic; }
 .b, .bold { font-weight: bold; }

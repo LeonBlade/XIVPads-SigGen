@@ -56,6 +56,23 @@
     transform: translateY(-50%);
 }
 
+@mixin halign {
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+@mixin align {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
 //-----------------------------------------------------------------------------
 //      Preserve 3d on parent element to avoid half pixel blur
 //-----------------------------------------------------------------------------

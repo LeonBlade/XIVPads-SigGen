@@ -10,12 +10,41 @@ html, body {
     margin: 0 auto;
 }
 
+.loading {
+    text-align: center;
+    width: 200px;
+    padding: 120px 0;
+    margin: 0 auto;
+
+    .loader-outter {
+        width: 60px;
+        margin: 40px auto;
+    }
+}
+
+.ball-scale-multiple > div {
+    background-color: $green !important;
+}
+
+.ball-clip-rotate-pulse>div:first-child {
+    background: lighten($blue, 30%);
+    top: 7px;
+    left: 7px;
+}
+.ball-clip-rotate-pulse>div:last-child {
+    border-color: $blue transparent;
+}
+
 h1 { font-size: 32px; }
 h2 { font-size: 28px; }
 h3 { font-size: 24px; }
 h4 { font-size: 20px; }
 h5 { font-size: 18px; }
 h6 { font-size: 16px; }
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+}
 
 ul {
     margin: 0 0 0 16px;
