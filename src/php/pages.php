@@ -14,7 +14,7 @@ switch($num)
 }
 
 // if no template
-if (!$template) return;
+if (!isset($template) || !$template) return;
 
 // get template
 $template = file_get_contents($template);

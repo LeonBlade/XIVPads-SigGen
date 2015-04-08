@@ -66,7 +66,6 @@ xiv.editor =
 
     toggleMenu: function(enabled)
     {
-        console.log('enabled', enabled);
         var $buttons = $('.templates-create .menu span:not(:first-child)');
         if (enabled) {
             $buttons.removeClass('disabled');

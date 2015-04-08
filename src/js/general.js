@@ -2,7 +2,7 @@ xiv.general =
 {
     page: function(data) {
         if (!data) {
-            console.error('No page?', data);
+            $('main').html(xiv.general.render404());
             return;
         }
 
@@ -38,5 +38,9 @@ xiv.general =
 
         // Return rendered result
         return rendered;
+    },
+
+    render404: function() {
+        return '<div class="p50 tac"><h3>i\'m a bit lost...</h3><h1 class="fainter mt40 fs50">404</h1></div>';
     },
 }
